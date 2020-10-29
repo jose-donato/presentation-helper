@@ -12,7 +12,7 @@ export default function Room({ room }) {
     const [isQRCodeOpen, setIsQRCodeOpen] = useState(false)
     const QRCodePopupRef = useRef()
     const { isFallback, asPath } = useRouter()
-    const shareUrl = "http://localhost:3000" + asPath;
+    const shareUrl = "https://talk-helper.vercel.app" + asPath;
 
     if (isFallback) {
         return <div>building page...</div>

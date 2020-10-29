@@ -37,7 +37,7 @@ const Links = ({ room }) => {
 		</span>}
             </div>
         </div>
-        <button disabled={error !== ""} className={`self-end w-24 mb-4 ${error ? "bg-blue-200 cursor-not-allowed hover:bg-blue-200" : ""}`} onClick={addNewLinkHandler}>Add Link</button>
+        <button className={`self-end w-24 mb-4 ${error ? "bg-blue-200 cursor-not-allowed hover:bg-blue-200" : ""}`} onClick={addNewLinkHandler}>Add Link</button>
         <ul className="list-decimal">
             {links && links.map(link => <li key={link}>
                 <div className="flex flex-col justify-between">
