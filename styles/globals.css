@@ -9,7 +9,7 @@
 /* Write your own custom component styles here */
 
 a {
-  @apply text-blue-900;
+  @apply text-blue-900 font-semibold;
 }
 
 a:hover {
@@ -18,6 +18,10 @@ a:hover {
 
 button {
   @apply bg-blue-500 text-white font-bold py-2 px-4 rounded w-32 h-8;
+}
+
+button:focus {
+  @apply outline-none;
 }
 
 button:hover {
@@ -39,10 +43,6 @@ body {
   background-color: azure;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
 * {
   box-sizing: border-box;

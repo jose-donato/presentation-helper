@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import Head from 'next/head'
 import { Fragment, useEffect, useState } from 'react'
-import { createRoom } from '../lib/db'
+import { checkIfRoomExists, createRoom } from '../lib/db'
 import { generateName } from '../lib/utils'
 import { useToasts } from "react-toast-notifications"
 
@@ -23,30 +23,30 @@ export default function Home() {
       setSubmitting(false)
       if (success) {
         addToast('Room available. Redirecting...', { appearance: 'success', autoDismiss: true })
-        setTimeout(() => { push(`/room/${slug}`) }, 200)
+        push(`/room/${slug}`)
       }
-      else alert("room already exists")
+      else addToast('Room already exists, create with another slug!', { appearance: 'error', autoDismiss: true })
     } catch (err) {
       setSubmitting(false)
       console.log(err)
     }
   }
 
-    const joinRoomHandler = async () => {
+  const joinRoomHandler = async () => {
     setJoinSubmitting(true)
-    if (slug === "") {
+    if (joinSlug === "") {
       return;
     }
     try {
-      const success = await createRoom(slug, {})
+      const exists = await checkIfRoomExists(joinSlug)
       setJoinSubmitting(false)
-      if (success) {
+      if (!exists) {
         addToast('Room available. Redirecting...', { appearance: 'success', autoDismiss: true })
-        setTimeout(() => { push(`/room/${slug}`) }, 200)
+        push(`/room/${joinSlug}`)
       }
-      else alert("room already exists")
+      else addToast('Room does not exist, create one!', { appearance: 'error', autoDismiss: true })
     } catch (err) {
-      setSubmitting(false)
+      setJoinSubmitting(false)
       console.log(err)
     }
   }
@@ -63,7 +63,6 @@ export default function Home() {
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-normal mb-2"
-              for="username"
             >
               Slug
               </label>
@@ -82,7 +81,6 @@ export default function Home() {
           <div className="mb-4 mt-8">
             <label
               className="block text-gray-700 text-sm font-normal mb-2"
-              for="username"
             >
               Slug
               </label>
