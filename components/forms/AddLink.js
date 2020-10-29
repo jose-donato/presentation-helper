@@ -9,10 +9,10 @@ const AddLink = ({roomId}) => {
   return (
     <form className="flex flex-col mb-6" onSubmit={handleSubmit(onSubmit)}>
       <div className="w-full">
-        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+        <label htmlFor="link" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
           Link
       </label>
-        <input name="link" ref={register({
+        <input name="link" id="link" ref={register({
           required: true, pattern: new RegExp('^(https?:\\/\\/)?' + // protocol
             '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
             '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address

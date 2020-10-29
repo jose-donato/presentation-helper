@@ -10,11 +10,11 @@ const AddSnippet = ({ roomId }) => {
     return (
         <form className="flex flex-col mb-6" onSubmit={handleSubmit(onSubmit)}>
             <div className="w-full mb-6">
-                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <label htmlFor="language" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                     Language
                 </label>
                 <div className="relative">
-                    <select name="language"
+                    <select id="language" name="language"
                         ref={register({
                             required: true, validate: (val) => highlighterLanguages.includes(val)
                         })} className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
@@ -31,11 +31,11 @@ const AddSnippet = ({ roomId }) => {
                 {errors.language && <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-2 ml-1">Language must be one of the chosen ones</span>}
             </div>
             <div className="w-full">
-                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                    Link
+                <label htmlFor="snippet" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                    Code Snippet
                 </label>
                 <div className="relative">
-                    <textarea name="snippet" ref={register({ required: true })} className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white" />
+                    <textarea id="snippet" name="snippet" ref={register({ required: true })} className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white" />
                 </div>
                 {errors.snippet && <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-2 ml-1">Code snippet is required</span>}
             </div>
