@@ -1,0 +1,16 @@
+{
+  "name": "Talk-helper",
+  "short_name": "Talk-helper",
+  "description": "Tool to help you and your attendees ace in your presentations.",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1B223D",
+  "background_color": "#1B223D",
+  "start_url": "/",
+  "display": "standalone"
+}

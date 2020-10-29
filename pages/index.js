@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <Fragment>
-      <p className="mb-4">Helper for your presentations. Create a room, share the url with the attendees and colab!</p>
+      <p className="mb-8">Helper for your presentations. Create a room, share the url with the attendees and colab!</p>
       <div className="flex flex-col p-10 rounded-3xl content-center bg-white divide-y">
         <div className="mb-6">
           <div className="mb-4">
@@ -71,7 +71,7 @@ export default function Home() {
               type="text"
               onChange={(e) => setSlug(e.currentTarget.value)}
               required
-              autofocus
+              autoFocus
               value={slug}
             />
           </div>
