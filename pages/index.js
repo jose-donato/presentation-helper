@@ -4,6 +4,7 @@ import { Fragment, useEffect, useState } from 'react'
 import { checkIfRoomExists, createRoom } from '../lib/db'
 import { generateName } from '../lib/utils'
 import { useToasts } from "react-toast-notifications"
+import {useForm} from "react-hook-form"
 
 export default function Home() {
   const { addToast } = useToasts()
