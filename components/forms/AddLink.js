@@ -22,7 +22,7 @@ const AddLink = ({roomId}) => {
         })} placeholder="https://vercel.com" className={`appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`} type="text" />
         {errors.link && <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-2 ml-1">URL is not valid</span>}
       </div>
-      <input type="submit" className={`self-end w-24 mb-4 mt-4`} value="Add link" />
+      <input type="submit" id="primaryButton" className={`self-end w-24 mb-4 mt-4`} value="Add link" />
     </form>
   )
 }

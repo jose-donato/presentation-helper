@@ -39,7 +39,7 @@ const AddSnippet = ({ roomId }) => {
                 </div>
                 {errors.snippet && <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-2 ml-1">Code snippet is required</span>}
             </div>
-            <input type="submit" className={`self-end w-24 px-2 mb-4 mt-4`} value="Add snippet" />
+            <input type="submit" id="primaryButton" className={`self-end w-24 px-2 mb-4 mt-4`} value="Add snippet" />
         </form>
     )
 }

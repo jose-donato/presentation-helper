@@ -40,7 +40,7 @@ const CreateRoom = () => {
                 })} defaultValue={generateName()} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" />
                 {errors.createSlug && <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-2 ml-1">Room id cannot have spaces</span>}
             </div>
-            <input type="submit" className={`self-end w-24 mb-4 mt-4`} value={submitting ? "Creating Room" : "Create Room"} />
+            <input type="submit" id="primaryButton" className={`self-end w-24 mb-4 mt-4`} value={submitting ? "Creating Room" : "Create Room"} />
         </form>
     )
 }
