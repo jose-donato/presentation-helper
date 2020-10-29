@@ -16,15 +16,16 @@ a:hover {
   @apply underline;
 }
 
-button {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded w-32 h-8;
+
+button, input[type=submit] {
+  @apply cursor-pointer bg-blue-500 text-white font-bold py-2 px-4 rounded w-32 h-8;
 }
 
-button:focus {
+button:focus, input[type=submit]:focus {
   @apply outline-none;
 }
 
-button:hover {
+button:hover, input[type=submit]:hover {
   @apply bg-blue-700;
 }
 
