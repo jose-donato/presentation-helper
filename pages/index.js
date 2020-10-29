@@ -1,25 +1,32 @@
 import { useRouter } from "next/router"
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import { checkIfRoomExists, createRoom } from '../lib/db'
+import { Fragment, useEffect, useState } from 'react'
+import { createRoom } from '../lib/db'
 import { generateName } from '../lib/utils'
-import styles from '../styles/Home.module.css'
+import { useToasts } from "react-toast-notifications"
 
 export default function Home() {
+    const { addToast } = useToasts()
   const [submitting, setSubmitting] = useState()
   const [slug, setSlug] = useState("")
   const [wantsCustomSlug, setWantsCustomSlug] = useState(false)
   const { push } = useRouter()
 
   const createRoomHandler = async () => {
+    setSubmitting(true)
     if (slug === "") {
       return;
     }
     try {
       const success = await createRoom(slug, {})
-      if(success) push(`/room/${slug}`)
+      setSubmitting(false)
+      if (success) {
+        addToast('Room available. Redirecting...', { appearance: 'success', autoDismiss: true })
+        setTimeout(()=> {push(`/room/${slug}`)}, 200)
+      }
       else alert("room already exists")
     } catch (err) {
+      setSubmitting(false)
       console.log(err)
     }
   }
@@ -28,29 +35,27 @@ export default function Home() {
   }, [])
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <p>Slug: {slug}</p>
-        <input type="checkbox" value={wantsCustomSlug} onChange={() => setWantsCustomSlug(!false)} />
-        {wantsCustomSlug && <input value={slug} type="text" onChange={(e) => setSlug(e.currentTarget.value)} />}
-        <button onClick={createRoomHandler}>Create Room</button>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    <Fragment>
+      <p className="mb-4">Helper for your presentations. Create a room, share the url with the attendees and colab!</p>
+      <div className="flex flex-col p-10 rounded-3xl content-center bg-white">
+        <div className="mb-4">
+              <label
+                className="block text-gray-700 text-sm font-normal mb-2"
+                for="username"
+              >
+                Slug
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="text"
+                onChange={(e) => setSlug(e.currentTarget.value)}
+                required
+                autofocus
+                value={slug}
+              />
+            </div>
+        <button className={`self-end ${submitting ? "bg-blue-200 cursor-not-allowed" : ""}`} onClick={createRoomHandler}>{submitting ? "Creating Room" : "Create Room"}</button>
+      </div>
+    </Fragment>
   )
 }

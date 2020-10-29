@@ -13,7 +13,9 @@
     "react": "17.0.1",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "17.0.1",
+    "react-qr-code": "^1.0.3",
     "react-syntax-highlighter": "^15.2.1",
+    "react-toast-notifications": "^2.4.0",
     "tailwindcss": "^1.9.6"
   }
 }

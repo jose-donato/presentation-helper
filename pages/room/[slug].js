@@ -1,74 +1,34 @@
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
-import Highlighter from "../../components/Highlighter"
-import { addCollectionItemToRoom, getRoom, getRoomsPaths, streamRoomCollection } from "../../lib/db"
-import highlighterLanguages from "../../lib/highlighterLanguages"
+import { useRef, useState } from "react"
+import QRCodePopup from "../../components/QRCodePopup"
+import { getRoom, getRoomsPaths } from "../../lib/db"
+import useOnClickOutside from "../../lib/customHooks/useOnClickOutside"
+import Links from "../../components/Links"
+import Snippets from "../../components/Snippets"
 export default function Room({ room }) {
-    const [newLink, setNewLink] = useState("")
-    const [links, setLinks] = useState(room.links)
-    const [snippets, setSnippets] = useState(room.snippets)
-    const [newLanguage, setNewLanguage] = useState(highlighterLanguages[0])
-    const [newSnippet, setNewSnippet] = useState("")
-    const { isFallback } = useRouter()
-
-    useEffect(() => {
-        const unsubscribe = streamRoomCollection(room.id, {
-            next: querySnapshot => {
-                const updatedLinks = querySnapshot.docs.map(docSnapshot => docSnapshot.data().link);
-                if (updatedLinks !== links) setLinks(updatedLinks);
-            },
-            error: () => console.log('grocery-list-item-get-fail')
-        }, 'links');
-        return unsubscribe;
-    }, [setLinks]);
-
-    useEffect(() => {
-        const unsubscribe = streamRoomCollection(room.id, {
-            next: querySnapshot => {
-                const updatedSnippets = querySnapshot.docs.map(docSnapshot => {
-                    const { language, snippet } = docSnapshot.data()
-                    return { language, snippet }
-                });
-                if (updatedSnippets !== snippets) setSnippets(updatedSnippets);
-            },
-            error: () => console.log('grocery-list-item-get-fail')
-        }, 'snippets');
-        return unsubscribe;
-    }, [setSnippets]);
-
-    const addNewLinkHandler = async () => {
-        addCollectionItemToRoom({ link: newLink }, room.id, 'links').then(() => setNewLink(""))
-    }
-
-    const addNewSnippetHandler = async () => {
-        addCollectionItemToRoom({ snippet: newSnippet, language: newLanguage }, room.id, 'snippets').then(() => setNewSnippet(""))
-    }
+    const [currentScreen, setCurrentScreen] = useState("links")
+    const [isQRCodeOpen, setIsQRCodeOpen] = useState(false)
+    const QRCodePopupRef = useRef()
+    const { isFallback, asPath } = useRouter()
 
     if (isFallback) {
         return <div>building page...</div>
     }
-    return <div className="">
-        <ul>
-            {links && links.map(link => <li key={link}><a href="">{link}</a></li>)}
-            <li><input type="text" value={newLink} onChange={e => setNewLink(e.currentTarget.value)} /> <button onClick={addNewLinkHandler}>add</button></li>
-        </ul>
-        <div>
-            add code
-        <select
-                className="select"
-                value={newLanguage}
-                onChange={e => setNewLanguage(e.currentTarget.value)}
-            >
-                {highlighterLanguages.map(l => (
-                    <option key={l} value={l}>
-                        {l}
-                    </option>
-                ))}
-            </select>
-            <textarea onChange={e => setNewSnippet(e.currentTarget.value)} value={newSnippet} />
-            <button onClick={addNewSnippetHandler}>add</button>
+    useOnClickOutside(QRCodePopupRef, () => setIsQRCodeOpen(false))
+    return <div className="flex flex-col">
+        <div className="flex flex-row justify-between">
+            <h2 className="text-blue-800">Room <span className="font-semibold">{room.id}</span></h2>
+            <img className="w-8 h-16 cursor-pointer" src="/qr-code-scan.svg" alt="qr-code scan" onClick={() => setIsQRCodeOpen(true)} />
         </div>
-        {snippets && snippets.map((snippet, i) => <Highlighter key={i} language={snippet.language} snippet={snippet.snippet} />)}
+        <div className="flex flex-col p-10 rounded-3xl content-center bg-white">
+        <div className="self-center mb-4">
+            <button onClick={() => setCurrentScreen("links")} className={`${currentScreen === "links" ? "bg-blue-500" : "bg-blue-300"} mr-4 focus:outline-none`}>Links</button>
+            <button onClick={() => setCurrentScreen("snippets")} className={`${currentScreen === "snippets" ? "bg-blue-500" : "bg-blue-300"} focus:outline-none`}>Snippets</button>
+        </div>
+        {isQRCodeOpen && <QRCodePopup ref={QRCodePopupRef} value={"http://localhost:3000" + asPath} />}
+        {currentScreen === "links" && <Links room={room} />}
+        {currentScreen === "snippets" && <Snippets room={room} />}
+        </div>
     </div>
 }
 
