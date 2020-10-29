@@ -25,7 +25,7 @@ export default function Room({ room }) {
             <button onClick={() => setCurrentScreen("links")} className={`${currentScreen === "links" ? "bg-blue-500" : "bg-blue-300"} mr-4 focus:outline-none`}>Links</button>
             <button onClick={() => setCurrentScreen("snippets")} className={`${currentScreen === "snippets" ? "bg-blue-500" : "bg-blue-300"} focus:outline-none`}>Snippets</button>
         </div>
-        {isQRCodeOpen && <QRCodePopup ref={QRCodePopupRef} value={"http://localhost:3000" + asPath} />}
+        {isQRCodeOpen && <QRCodePopup close={() => setIsQRCodeOpen(false)} ref={QRCodePopupRef} value={"http://localhost:3000" + asPath} />}
         {currentScreen === "links" && <Links room={room} />}
         {currentScreen === "snippets" && <Snippets room={room} />}
         </div>

@@ -1,11 +1,11 @@
 import { ToastProvider } from 'react-toast-notifications'
-
+import Link from "next/link"
 const Layout = ({ children }) => {
     return <ToastProvider>
         <div className="flex flex-col mx-auto max-w-xl py-5 content-center container">
             <header className="flex mb-10 justify-center">
                 <img className="h-10 mr-6" src="/presentation.svg" alt="talkhelper logo" />
-                <h1 className="text-3xl text-blue-800 font-bold">talk-helper.vercel.app</h1>
+                <h1 className="text-3xl text-blue-800 font-bold"><Link href="/"><a>talk-helper.vercel.app</a></Link></h1>
             </header>
             <main className="px-10 pb-5 text-gray-900 text-sm font-normal">
                 {children}

@@ -24,13 +24,20 @@ const Links = ({ room }) => {
                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                     Link
       </label>
-                <input placeholder="https://vercel.com" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" value={newLink} onChange={e => setNewLink(e.currentTarget.value)} /> 
+                <input placeholder="https://vercel.com" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" value={newLink} onChange={e => setNewLink(e.currentTarget.value)} />
             </div>
         </div>
-                <button className="self-end w-24" onClick={addNewLinkHandler}>Add Link</button>
-        <ul className="list-disc">
-            {links && links.map(link => <li key={link}><a target="_blank"
-                rel="noopener noreferrer" className="" href={link}>{link}</a></li>)}
+        <button className="self-end w-24 mb-4" onClick={addNewLinkHandler}>Add Link</button>
+        <ul className="list-decimal">
+            {links && links.map(link => <li key={link}>
+                <div className="flex flex-col justify-between">
+                    <a target="_blank"
+                        rel="noopener noreferrer" className="font-semibold" href={link}>
+                        {link}
+                    </a>
+                    <span className="text-xs">Added at {"26..."}</span>
+                </div>
+            </li>)}
         </ul>
     </Fragment>)
 }
