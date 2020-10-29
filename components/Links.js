@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useToasts } from "react-toast-notifications";
 import { streamRoomCollection } from "../lib/db"
 import AddLink from "./forms/AddLink";
@@ -22,7 +22,7 @@ const Links = ({ room }) => {
         return unsubscribe;
     }, [setLinks]);
 
-    return (<Fragment>
+    return (<div className="px-2">
         <AddLink roomId={room.id} />
         <ul className="list-decimal">
             {links && links.map((link, i) => <li key={`${link.link}${i}`}>
@@ -35,7 +35,7 @@ const Links = ({ room }) => {
                 </div>
             </li>)}
         </ul>
-    </Fragment>)
+    </div>)
 }
 
 export default Links

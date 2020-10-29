@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { addCollectionItemToRoom, streamRoomCollection } from "../lib/db"
 import highlighterLanguages from "../lib/highlighterLanguages"
 import Highlighter from "./Highlighter"
@@ -26,7 +26,7 @@ const Snippets = ({ room }) => {
         return unsubscribe;
     }, [setSnippets]);
     return (
-        <Fragment>
+        <div className="px-2">
             <AddSnippet roomId={room.id} />
             <ul className="list-decimal">
                 {snippets && snippets.map((snippet, i) => <li key={i} className="mb-6">
@@ -46,7 +46,7 @@ const Snippets = ({ room }) => {
                     <Highlighter language={snippet.language} snippet={snippet.snippet} />
                 </li>)}
             </ul>
-        </Fragment>
+        </div>
     )
 }
 

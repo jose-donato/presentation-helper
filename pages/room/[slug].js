@@ -7,8 +7,27 @@ import Links from "../../components/Links"
 import Snippets from "../../components/Snippets"
 import copy from 'copy-to-clipboard';
 import { useToasts } from "react-toast-notifications"
+import SwipeableViews from "react-swipeable-views"
+
+const styles = {
+    slide: {
+        padding: 15,
+        minHeight: 100,
+        color: '#fff',
+    },
+    slide1: {
+        backgroundColor: '#FEA900',
+    },
+    slide2: {
+        backgroundColor: '#B3DC4A',
+    },
+    slide3: {
+        backgroundColor: '#6AC0FF',
+    },
+};
 
 export default function Room({ room }) {
+    const [index, setIndex] = useState(0)
     const { addToast } = useToasts()
     const [shared, setShared] = useState(false)
     const [currentScreen, setCurrentScreen] = useState("links")
@@ -17,16 +36,18 @@ export default function Room({ room }) {
     const { isFallback, asPath } = useRouter()
     const shareUrl = "https://talk-helper.vercel.app" + asPath;
 
+
     if (isFallback) {
         return <div>building page...</div>
     }
+
     useOnClickOutside(QRCodePopupRef, () => setIsQRCodeOpen(false))
 
     return <div className="flex flex-col">
         <div className="flex flex-row justify-between mb-6">
             <div>
-            <h2 className="text-blue-800 mb-2">Room <span className="font-semibold">{room.id}</span></h2>
-            <p className="text-xs">Created at {new Date(room.created).toUTCString()}</p>
+                <h2 className="text-blue-800 mb-2">Room <span className="font-semibold">{room.id}</span></h2>
+                <p className="text-xs">Created at {new Date(room.created).toUTCString()}</p>
             </div>
             <div className="flex flex-row items-center -mt-5">
                 <button className="w-8 h-8 bg-blue-500 rounded focus:outline-none mr-2" onClick={async () => {
@@ -54,14 +75,20 @@ export default function Room({ room }) {
                 </button>
             </div>
         </div>
+        {isQRCodeOpen && <QRCodePopup close={() => setIsQRCodeOpen(false)} ref={QRCodePopupRef} value={shareUrl} />}
         <div className="flex flex-col p-10 rounded-3xl content-center bg-white">
-            <div className="self-center mb-4">
-                <button id="primaryButton" onClick={() => setCurrentScreen("links")} className={`${currentScreen === "links" ? "bg-blue-500" : "bg-blue-300"} w-24 mr-4 focus:outline-none`}>Links</button>
-                <button id="primaryButton" onClick={() => setCurrentScreen("snippets")} className={`${currentScreen === "snippets" ? "bg-blue-500" : "bg-blue-300"} w-24 focus:outline-none`}>Snippets</button>
+            <div className="flex flex-row mb-6">
+                <button className={`${index === 0 ? " bg-blue-500 text-white" : "bg-blue-200"} hover:bg-blue-200 px-2 py-1 rounded focus:outline-none mr-4`} onClick={() => setIndex(0)}>
+                    Links
+                </button>
+                <button className={`${index === 1 ? "bg-blue-500 text-white" : "bg-blue-200"} hover:bg-blue-200 px-2 py-1 rounded focus:outline-none`} onClick={() => setIndex(1)}>
+                    Snippets
+                </button>
             </div>
-            {isQRCodeOpen && <QRCodePopup close={() => setIsQRCodeOpen(false)} ref={QRCodePopupRef} value={shareUrl} />}
-            {currentScreen === "links" && <Links room={room} />}
-            {currentScreen === "snippets" && <Snippets room={room} />}
+            <SwipeableViews index={index} onChangeIndex={(i) => setIndex(i)}>
+                <Links room={room} />
+                <Snippets room={room} />
+            </SwipeableViews>
         </div>
     </div>
 }
