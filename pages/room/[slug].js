@@ -1,40 +1,24 @@
 import { useRouter } from "next/router"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import QRCodePopup from "../../components/QRCodePopup"
-import { getRoom, getRoomsPaths } from "../../lib/db"
+import { getRoom, getRoomsPaths, streamRoomCollection } from "../../lib/db"
 import useOnClickOutside from "../../lib/customHooks/useOnClickOutside"
-import Links from "../../components/Links"
-import Snippets from "../../components/Snippets"
 import copy from 'copy-to-clipboard';
 import { useToasts } from "react-toast-notifications"
 import SwipeableViews from "react-swipeable-views"
-
-const styles = {
-    slide: {
-        padding: 15,
-        minHeight: 100,
-        color: '#fff',
-    },
-    slide1: {
-        backgroundColor: '#FEA900',
-    },
-    slide2: {
-        backgroundColor: '#B3DC4A',
-    },
-    slide3: {
-        backgroundColor: '#6AC0FF',
-    },
-};
+import AddLink from "../../components/forms/AddLink"
+import AddSnippet from "../../components/forms/AddSnippet"
+import Log from "../../components/Log"
+import { addAndSort } from "../../lib/utils"
 
 export default function Room({ room }) {
     const [index, setIndex] = useState(0)
     const { addToast } = useToasts()
     const [shared, setShared] = useState(false)
-    const [currentScreen, setCurrentScreen] = useState("links")
     const [isQRCodeOpen, setIsQRCodeOpen] = useState(false)
     const QRCodePopupRef = useRef()
     const { isFallback, asPath } = useRouter()
-    const shareUrl = "https://talk-helper.vercel.app" + asPath;
+    const shareUrl = typeof window !== undefined ? "https://talk-helper.vercel.app" + asPath : window.location.href;
 
 
     if (isFallback) {
@@ -42,6 +26,7 @@ export default function Room({ room }) {
     }
 
     useOnClickOutside(QRCodePopupRef, () => setIsQRCodeOpen(false))
+
 
     return <div className="flex flex-col">
         <div className="flex flex-row justify-between mb-6">
@@ -85,10 +70,13 @@ export default function Room({ room }) {
                     Snippets
                 </button>
             </div>
-            <SwipeableViews index={index} onChangeIndex={(i) => setIndex(i)}>
-                <Links room={room} />
-                <Snippets room={room} />
-            </SwipeableViews>
+            <div className="divide-y">
+                <SwipeableViews index={index} onChangeIndex={(i) => setIndex(i)}>
+                    <AddLink roomId={room.id} />
+                    <AddSnippet roomId={room.id} />
+                </SwipeableViews>
+                <Log room={room} />
+            </div>
         </div>
     </div>
 }

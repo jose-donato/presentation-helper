@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
     <Head>
       <title>{title}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
     </Head>
     <Component {...pageProps} />
   </Layout>

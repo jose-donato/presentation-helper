@@ -7,7 +7,7 @@ const AddLink = ({roomId}) => {
   };
 
   return (
-    <form className="flex flex-col mb-6" onSubmit={handleSubmit(onSubmit)}>
+    <form className="flex flex-col mb-6 px-2" onSubmit={handleSubmit(onSubmit)}>
       <div className="w-full">
         <label htmlFor="link" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
           Link
