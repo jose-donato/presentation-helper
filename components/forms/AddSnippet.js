@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form"
 import { addCollectionItemToRoom } from "../../lib/db";
-import highlighterLanguages from "../../lib/highlighterLanguages"
+import { primaryLanguages } from "../../lib/highlighterLanguages"
 
 const AddSnippet = ({ roomId }) => {
     const { register, handleSubmit, errors, reset } = useForm();
     const onSubmit = data => {
-        addCollectionItemToRoom({ snippet: data.snippet, language: data.language }, roomId, 'snippets').then(() => reset())
+        addCollectionItemToRoom({ snippet: data.snippet, language: data.language, type: 'snippet' }, roomId, 'logs').then(() => reset())
     };
     return (
         <form className="flex flex-col mb-6 px-2" onSubmit={handleSubmit(onSubmit)}>
@@ -15,10 +15,11 @@ const AddSnippet = ({ roomId }) => {
                 </label>
                 <div className="relative">
                     <select id="language" name="language"
+                        defaultValue="javascript"
                         ref={register({
-                            required: true, validate: (val) => highlighterLanguages.includes(val)
+                            required: true, validate: (val) => primaryLanguages.includes(val)
                         })} className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                        {highlighterLanguages.map(l => (
+                        {primaryLanguages.map(l => (
                             <option key={l} value={l}>
                                 {l}
                             </option>

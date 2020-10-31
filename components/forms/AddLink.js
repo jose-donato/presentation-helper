@@ -3,7 +3,7 @@ import { addCollectionItemToRoom } from "../../lib/db";
 const AddLink = ({roomId}) => {
   const { register, handleSubmit, errors, reset } = useForm();
   const onSubmit = data => {
-    addCollectionItemToRoom({ link: data.link }, roomId, 'links').then(() => reset())
+    addCollectionItemToRoom({ link: data.link, type: "link" }, roomId, 'logs').then(() => reset())
   };
 
   return (

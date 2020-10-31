@@ -9,7 +9,6 @@ import SwipeableViews from "react-swipeable-views"
 import AddLink from "../../components/forms/AddLink"
 import AddSnippet from "../../components/forms/AddSnippet"
 import Log from "../../components/Log"
-import { addAndSort } from "../../lib/utils"
 
 export default function Room({ room }) {
     const [index, setIndex] = useState(0)
