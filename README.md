@@ -4,24 +4,28 @@
 </h3>
 
 <h3 align="center">
-  Small tool to help you and your attendees ace in presentations.
+  Small tool to help you and your attendees ace in presentations. Create and share it in seconds. 
 </h3>
 
 <br />
 
 
 ### Features
-* Simple - 
-* Fast - 
-* Scalable - 
-* Modern - 
+* Simple - create room and share content in seconds
+* Fast - Static + realtime updates with firestore
+* Scalable - [Next.js ISG](https://google.com) creates new URL for the rooms you create on the fly
+* Modern - built using fresh frameworks
+* Installable - PWA
 
+#### Upcoming features
+*  
 
 ### Technologies used
-* [Firestore from firebase](https://talk-helper.vercel.app) -
-* [Next.JS](https://talk-helper.vercel.app) - 
-* [TailwindCSS](https://talk-helper.vercel.app) - 
-* [Flaticon](https://talk-helper.vercel.app) -
+* made with [Next.js](https://talk-helper.vercel.app)
+* persistent data (rooms and its content) in [Cloud Firestore](https://firebase.google.com/docs/firestore)
+* styling with [tailwindcss](https://tailwindcss.com/)
+* icons from [Flaticon](https://www.flaticon.com/)
+* deployed in [Vercel](http://vercel.com/)
 
 ### Run in dev
 What you need:
@@ -40,6 +44,11 @@ npm run dev
 > The application is live, you can try it [here](https://talk-helper.vercel.app)
 
 ![description](url)
+
+
+### Scores
+> carbon
+> lighthouse
 
 
 ### Funding
