@@ -1,30 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h3 align="center">
+  <h3 align="center"><a href="https://talk-helper.vercel.app">talk-helper.vercel.app</a></h3>
+  <img src="https://www.flaticon.com/svg/static/icons/svg/3534/3534083.svg" alt="Logo" height="100">
+</h3>
 
-## Getting Started
+<h3 align="center">
+  Small tool to help you and your attendees ace in presentations.
+</h3>
 
-First, run the development server:
+<br />
 
-```bash
+
+### Features
+* Simple - 
+* Fast - 
+* Scalable - 
+* Modern - 
+
+
+### Technologies used
+* [Firestore from firebase](https://talk-helper.vercel.app) -
+* [Next.JS](https://talk-helper.vercel.app) - 
+* [TailwindCSS](https://talk-helper.vercel.app) - 
+* [Flaticon](https://talk-helper.vercel.app) -
+
+### Run in dev
+What you need:
+* **backend**: firebase account and project created
+
+* **frontend**: this repository
+```sh
+git clone https://github.com/jose-donato/talk-helper
+cd talk-helper
+npm i
+touch .env.local
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### App preview
+> The application is live, you can try it [here](https://talk-helper.vercel.app)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+![description](url)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Funding
+I'm starting my career and at the same time finishing my masters' in Cyber Security. If I helped you in any way please consider to support me in [GitHub](https://github.com/sponsors/jose-donato) or [by buying me a coffee](https://www.buymeacoffee.com/josedonato).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Contributing
+Contributions are welcomed. 
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### License
+This project is licensed under MIT. Feel free to use it where you need. However, consider to support me if my work has helped you.
