@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import QRCodePopup from "../../components/QRCodePopup"
 import { getRoom, getRoomsPaths, streamRoomCollection } from "../../lib/db"
 import useOnClickOutside from "../../lib/customHooks/useOnClickOutside"
@@ -8,7 +8,8 @@ import { useToasts } from "react-toast-notifications"
 import SwipeableViews from "react-swipeable-views"
 import AddLink from "../../components/forms/AddLink"
 import AddSnippet from "../../components/forms/AddSnippet"
-import Log from "../../components/Log"
+import Log from "../../components/logs/Log"
+import Head from 'next/head'
 
 export default function Room({ room }) {
     const [index, setIndex] = useState(0)
@@ -17,7 +18,7 @@ export default function Room({ room }) {
     const [isQRCodeOpen, setIsQRCodeOpen] = useState(false)
     const QRCodePopupRef = useRef()
     const { isFallback, asPath } = useRouter()
-    const shareUrl = typeof window !== undefined ? "https://talk-helper.vercel.app" + asPath : window.location.href;
+    const shareUrl = typeof window !== undefined ? "https://presentation-helper.vercel.app" + asPath : window.location.href;
 
 
     if (isFallback) {
@@ -28,6 +29,9 @@ export default function Room({ room }) {
 
 
     return <div className="flex flex-col">
+        <Head>
+          <title>{`${room.id} | presentation-helper`}</title>
+        </Head>
         <div className="flex flex-row justify-between mb-6">
             <div>
                 <h2 className="text-blue-800 mb-2">Room <span className="font-semibold">{room.id}</span></h2>
@@ -43,7 +47,7 @@ export default function Room({ room }) {
                     setTimeout(() => setShared(false), 1000)
                     if (navigator.share) {
                         await navigator.share({
-                            title: 'talk-helper',
+                            title: 'presentation-helper',
                             text: '',
                             url: shareUrl,
                         })

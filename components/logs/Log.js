@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useToasts } from "react-toast-notifications";
-import { streamRoomCollection } from "../lib/db";
-import { addAndSort } from "../lib/utils";
-import Checkbox from "./Checkbox";
-import Dropdown from "./Dropdown";
+import { streamRoomCollection } from "../../lib/db";
+import Checkbox from "../Checkbox";
+import Dropdown from "../Dropdown";
 import LinkLog from "./LinkLog";
 import SnippetLog from "./SnippetLog";
 

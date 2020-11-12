@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Highlighter from "./Highlighter"
+import Highlighter from "../Highlighter"
 import copy from "copy-to-clipboard"
 import { useToasts } from "react-toast-notifications"
 

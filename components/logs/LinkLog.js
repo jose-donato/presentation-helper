@@ -1,9 +1,4 @@
-const { default: SnippetLog } = require("./SnippetLog")
-
 const LinkLog = ({ link }) => {
-    /*const [links, setLinks] = useState(room.links)
-    const { addToast } = useToasts()*/
-
     return (
         <li className="mb-6">
             <div className="flex flex-col justify-between">

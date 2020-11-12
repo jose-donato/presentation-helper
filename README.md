@@ -1,5 +1,5 @@
 <h3 align="center">
-  <h3 align="center"><a href="https://talk-helper.vercel.app">talk-helper.vercel.app</a></h3>
+  <h3 align="center"><a href="https://presentation-helper.vercel.app">presentation-helper.vercel.app</a></h3>
   <img src="https://www.flaticon.com/svg/static/icons/svg/3534/3534083.svg" alt="Logo" height="100">
 </h3>
 
@@ -18,10 +18,10 @@
 
 
 ### Technologies used
-* [Firestore from firebase](https://talk-helper.vercel.app) -
-* [Next.JS](https://talk-helper.vercel.app) - 
-* [TailwindCSS](https://talk-helper.vercel.app) - 
-* [Flaticon](https://talk-helper.vercel.app) -
+* [Firestore from firebase](https://presentation-helper.vercel.app) -
+* [Next.JS](https://presentation-helper.vercel.app) - 
+* [TailwindCSS](https://presentation-helper.vercel.app) - 
+* [Flaticon](https://presentation-helper.vercel.app) -
 
 ### Run in dev
 What you need:
@@ -29,15 +29,15 @@ What you need:
 
 * **frontend**: this repository
 ```sh
-git clone https://github.com/jose-donato/talk-helper
-cd talk-helper
+git clone https://github.com/jose-donato/presentation-helper
+cd presentation-helper
 npm i
 touch .env.local
 npm run dev
 ```
 
 ### App preview
-> The application is live, you can try it [here](https://talk-helper.vercel.app)
+> The application is live, you can try it [here](https://presentation-helper.vercel.app)
 
 ![description](url)
 
