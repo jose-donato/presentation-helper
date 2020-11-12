@@ -1,5 +1,5 @@
-<h3 align="center">
   <h3 align="center"><a href="https://presentation-helper.vercel.app">presentation-helper.vercel.app</a></h3>
+<h3 align="center">
   <img src="https://www.flaticon.com/svg/static/icons/svg/3534/3534083.svg" alt="Logo" height="100">
 </h3>
 
@@ -11,44 +11,57 @@
 
 
 ### Features
-* Simple - create room and share content in seconds
-* Fast - Static + realtime updates with firestore
-* Scalable - [Next.js ISG](https://google.com) creates new URL for the rooms you create on the fly
-* Modern - built using fresh frameworks
-* Installable - PWA
+* **Simple** 💡 - create room and share content in seconds
+* **Fast** 🚀 - Static + realtime updates with [Cloud Firestore](https://firebase.google.com/docs/firestore)
+* **Scalable** 🌍 - [Next.js ISG](https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration) combined with [Cloud Firestore](https://firebase.google.com/docs/firestore) allows us to create new URL for the rooms on the fly
+* **Modern** 🛸 - built using fresh frameworks
+* **Installable** 📱 - the web application is installable as a PWA offering a similar to native experience in all devices
 
 #### Upcoming features
 *  
 
 ### Technologies used
-* made with [Next.js](https://talk-helper.vercel.app)
-* persistent data (rooms and its content) in [Cloud Firestore](https://firebase.google.com/docs/firestore)
-* styling with [tailwindcss](https://tailwindcss.com/)
-* icons from [Flaticon](https://www.flaticon.com/)
-* deployed in [Vercel](http://vercel.com/)
+* made with [Next.js](https://presentation-helper.vercel.app) <img src="https://api.iconify.design/logos-nextjs.svg" alt="Next.js logo" width="20">
+* persistent data (rooms and its content) in [Cloud Firestore](https://firebase.google.com/docs/firestore) <img src="https://api.iconify.design/logos:firebase.svg" alt="Firebase logo" width="9">
+* styling with [tailwindcss](https://tailwindcss.com/) <img src="https://api.iconify.design/logos:tailwindcss-icon.svg" alt="Tailwind logo" width="25">
+* icons from [Flaticon](https://www.flaticon.com/) <img src="https://media.flaticon.com/dist/min/img/logo/flaticon_negative.svg" alt="Flaticon logo" width="40">
+* deployed in [Vercel](http://vercel.com/) <img src="https://logovtor.com/wp-content/uploads/2020/10/vercel-inc-logo-vector.png" alt="Vercel logo" width="40">
 
-### Run in dev
+### Run in development mode
 What you need:
-* **backend**: firebase account and project created
+* **backend**: create a firebase account and project
+  * create firebase project
+  * create web application in firebase project
+  * create cloud firestore in firebase project 
+  * grab *apiKey*, *databaseURL* and *projectId* from firebase configuration object - [more info in firebase docs](https://firebase.google.com/docs/web/setup#node.js-apps)
 
 * **frontend**: this repository
 ```sh
-git clone https://github.com/jose-donato/talk-helper
-cd talk-helper
+git clone https://github.com/jose-donato/presentation-helper
+cd presentation-helper
 npm i
 touch .env.local
 npm run dev
 ```
 
+`.env.local` file should look similar to this but with the credentials you grab from firebase:
+```
+NEXT_PUBLIC_FIREBASE_API_KEY="XXX"
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="YYY.firebaseapp.com"
+NEXT_PUBLIC_FIREBASE_PROJECT_ID="YYY"
+```
+
 ### App preview
-> The application is live, you can try it [here](https://talk-helper.vercel.app)
+> The application is live, you can try it [here](https://presentation-helper.vercel.app)
 
 ![description](url)
 
 
 ### Scores
 > carbon
+
 > lighthouse
+
 
 
 ### Funding
