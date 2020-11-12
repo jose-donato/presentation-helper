@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
                 {children}
             </main>
             <footer className="">
-                <div className="text-right p-10 pr-0 text-xs font-hairline text-gray-700">
+                <div className="text-right p-10 pr-0 text-xs font-hairline text-gray-800">
                     <p className="mb-1">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
                     <p className="mb-1">Developed by <a href="https://jose-donato.me" title="jose-donato.me">jose-donato.me</a></p>
                     <p className="mb-1">Made with <a href="https://firebase.google.com/" title="Firebase">Firebase</a>, <a href="https://nextjs.org/" title="Next.js">Next.js</a> and <a href="https://tailwindcss.com/" title="tailwindcss">tailwindcss</a></p>
