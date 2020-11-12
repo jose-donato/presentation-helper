@@ -49,32 +49,6 @@
 <br>
 <br>
 
-### Run in development mode
-What you need:
-* **backend**: create a firebase account and project
-  * create firebase project
-  * create web application in firebase project
-  * create cloud firestore in firebase project 
-  * grab *apiKey*, *databaseURL* and *projectId* from firebase configuration object - [more info in firebase docs](https://firebase.google.com/docs/web/setup#node.js-apps)
-
-* **frontend**: this repository
-```sh
-git clone https://github.com/jose-donato/presentation-helper
-cd presentation-helper
-npm i
-touch .env.local
-npm run dev
-```
-
-`.env.local` file should look similar to this but with the credentials you grab from firebase:
-```
-NEXT_PUBLIC_FIREBASE_API_KEY="XXX"
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="YYY.firebaseapp.com"
-NEXT_PUBLIC_FIREBASE_PROJECT_ID="YYY"
-```
-
-<br>
-<br>
 
 ### App preview
 > The application is live, you can try it [here](https://presentation-helper.vercel.app)
@@ -111,7 +85,35 @@ I'm starting my career and at the same time finishing my masters' in Cyber Secur
 
 
 ### Contributing
-Contributions are welcomed. Feel free to PR or open an issue with ideas/bugs found.
+Contributions are welcomed. Feel free to PR or open an issue with ideas/bugs found. Check in the following section how to run the application locally.
+
+<br>
+<br>
+
+
+### Run in development mode
+What you need:
+* **backend**: create a firebase account and project
+  * create firebase project
+  * create web application in firebase project
+  * create cloud firestore in firebase project 
+  * grab *apiKey*, *databaseURL* and *projectId* from firebase configuration object - [more info in firebase docs](https://firebase.google.com/docs/web/setup#node.js-apps)
+
+* **frontend**: this repository
+```sh
+git clone https://github.com/jose-donato/presentation-helper
+cd presentation-helper
+npm i
+touch .env.local
+npm run dev
+```
+
+`.env.local` file should look similar to this but with the credentials you grab from firebase:
+```
+NEXT_PUBLIC_FIREBASE_API_KEY="XXX"
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="YYY.firebaseapp.com"
+NEXT_PUBLIC_FIREBASE_PROJECT_ID="YYY"
+```
 
 <br>
 <br>
