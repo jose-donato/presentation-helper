@@ -13,9 +13,9 @@
 </p>
 
 
-<h3 align="center">
-  <a href="https://presentation-helper.vercel.app">presentation-helper</a> - a small tool to help you and your attendees ace in presentations. Create a room and share it in seconds. From that point on you can send snippets and links to the attendes in the room immediately.
-</h3>
+<p align="center">
+  <a href="https://presentation-helper.vercel.app">presentation-helper</a> - a small tool to help you and your attendees ace in presentations. Create a room and share it in seconds. Then you can share snippets and links that the attendees can see immediately.
+</p>
 
 <br />
 
