@@ -28,8 +28,16 @@
 * **Installable** 📱 - the web application is installable as a PWA offering a similar to native experience in all devices
 * **Offline** 😴 - with service workers, if the user is offline we display a static page offline page
 
+<br>
+<br>
+
 #### Upcoming features
-*  
+* 🔐 master passwords to encrypt the room contents and limit its access
+* 🌙 customizable themes (including dark mode)
+* 🙏 ... tell me what do you want to see more by opening an issue!
+
+<br>
+<br>
 
 ### Technologies used
 * made with [Next.js](https://presentation-helper.vercel.app) <img src="https://api.iconify.design/logos-nextjs.svg" alt="Next.js logo" width="20">
@@ -37,6 +45,9 @@
 * styling with [tailwindcss](https://tailwindcss.com/) <img src="https://api.iconify.design/logos:tailwindcss-icon.svg" alt="Tailwind logo" width="25">
 * icons from [Flaticon](https://www.flaticon.com/) <img src="https://media.flaticon.com/dist/min/img/logo/flaticon_negative.svg" alt="Flaticon logo" width="40">
 * deployed in [Vercel](http://vercel.com/) <img src="https://logovtor.com/wp-content/uploads/2020/10/vercel-inc-logo-vector.png" alt="Vercel logo" width="40">
+
+<br>
+<br>
 
 ### Run in development mode
 What you need:
@@ -62,6 +73,9 @@ NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="YYY.firebaseapp.com"
 NEXT_PUBLIC_FIREBASE_PROJECT_ID="YYY"
 ```
 
+<br>
+<br>
+
 ### App preview
 > The application is live, you can try it [here](https://presentation-helper.vercel.app)
 
@@ -71,25 +85,36 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID="YYY"
 <br>
 <img src="docs/images/offline.png" width="400" alt="Offline screen" >
 
+<br>
+<br>
 
 ### Scores
+> lighthouse - https://lighthouse-metrics.com/one-time-tests/5fad6c5a8ebad3000912d61e
+
+<img src="docs/images/lighthouse.png" width="400" alt="Lighthouse results">
+
+<br>
+<br>
+
 > carbon - https://www.websitecarbon.com/website/presentation-helper-vercel-app/ 
 
 <img src="docs/images/carbon.png" width="400" alt="Carbon results">
 
-
 <br>
-> lighthouse - 
-
-<img src="docs/images/carbon.png" width="400" alt="Carbon results">
+<br>
 
 ### Funding
-I'm starting my career and at the same time finishing my masters' in Cyber Security. If I helped you in any way please consider to support me in [GitHub](https://github.com/sponsors/jose-donato) or [by buying me a coffee](https://www.buymeacoffee.com/josedonato).
+I'm starting my career and at the same time finishing my masters' in Cyber Security. If I helped you in any way please consider to support me in [GitHub](https://github.com/sponsors/jose-donato) or by [buying me a coffee](https://www.buymeacoffee.com/josedonato).
+
+<br>
+<br>
 
 
 ### Contributing
 Contributions are welcomed. Feel free to PR or open an issue with ideas/bugs found.
 
+<br>
+<br>
 
 ### License
 This project is licensed under MIT. Feel free to use it where you need. However, consider to support me if my work has helped you.
