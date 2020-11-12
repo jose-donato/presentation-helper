@@ -3,8 +3,18 @@
   <img src="https://www.flaticon.com/svg/static/icons/svg/3534/3534083.svg" alt="Logo" height="100">
 </h3>
 
+<p align="center">
+  <a href="https://github.com/sponsors/jose-donato"><img
+     alt="GitHub Sponsors"
+     src="https://img.shields.io/badge/GitHub-sponsor-0A5DFF.svg"></a>
+  <a href="https://www.buymeacoffee.com/josedonato"><img
+     alt="Buy me a Coffee"
+     src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-donate-FF813F.svg"></a>
+</p>
+
+
 <h3 align="center">
-  Small tool to help you and your attendees ace in presentations. Create a room and share it in seconds. From that point on you can send snippets and links to the attendes in the room immediately.
+  <a href="https://presentation-helper.vercel.app">presentation-helper</a> - a small tool to help you and your attendees ace in presentations. Create a room and share it in seconds. From that point on you can send snippets and links to the attendes in the room immediately.
 </h3>
 
 <br />
