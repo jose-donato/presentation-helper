@@ -3,9 +3,9 @@ import Link from "next/link"
 const Layout = ({ children }) => {
     return <ToastProvider>
         <div className="flex flex-col mx-auto max-w-xl py-5 content-center container px-6">
-            <header className="flex mb-6 justify-center">
-                <img className="h-10 mr-6" src="/presentation.svg" alt="talkhelper logo" />
-                <h1 className="text-2xl mt-1 sm:text-3xl text-blue-800 font-bold"><Link href="/"><a>presentation-helper.vercel.app</a></Link></h1>
+            <header className="flex mb-6 items-center justify-center rounded-3xl shadow-lg bg-white h-16">
+                <img className="h-10 mr-6" src="/presentation.svg" alt="presentation-helper logo" />
+                <h1 className="text-xl mt-1 sm:text-3xl text-blue-800 font-bold"><Link href="/"><a>presentation-helper</a></Link></h1>
             </header>
             <main className="pb-5 text-gray-900 text-sm font-normal">
                 {children}

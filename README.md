@@ -55,25 +55,30 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID="YYY"
 ### App preview
 > The application is live, you can try it [here](https://presentation-helper.vercel.app)
 
-![Homepage screen](docs/images/homepage.png)
-![Room screen](docs/images/room.png)
-
+<img src="docs/images/homepage.png" width="400" alt="Homepage screen" >
+<br>
+<img src="docs/images/room.png" width="400" alt="Room screen" >
+<br>
+<img src="docs/images/offline.png" width="400" alt="Offline screen" >
 
 
 ### Scores
 > carbon - https://www.websitecarbon.com/website/presentation-helper-vercel-app/ 
-![Carbon results](docs/images/carbon.png)
 
+<img src="docs/images/carbon.png" width="400" alt="Carbon results">
+
+
+<br>
 > lighthouse - 
-![Carbon results](docs/images/carbon.png)
 
+<img src="docs/images/carbon.png" width="400" alt="Carbon results">
 
 ### Funding
 I'm starting my career and at the same time finishing my masters' in Cyber Security. If I helped you in any way please consider to support me in [GitHub](https://github.com/sponsors/jose-donato) or [by buying me a coffee](https://www.buymeacoffee.com/josedonato).
 
 
 ### Contributing
-Contributions are welcomed. 
+Contributions are welcomed. Feel free to PR or open an issue with ideas/bugs found.
 
 
 ### License

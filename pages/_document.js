@@ -4,7 +4,7 @@ const title = "presentation-helper";
 const description = "Tool to help you and your attendees ace in presentations."
 const url = "https://presentation-helper.vercel.app"
 const author = "José Donato"
-const color = "#3d7cf9"
+const color = "#bee3f8"
 const type = "Productivity Tool"
 const keywords = "collab, presentation, talk, rooms, workshops"
 

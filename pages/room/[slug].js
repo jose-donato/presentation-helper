@@ -64,7 +64,7 @@ export default function Room({ room }) {
             </div>
         </div>
         {isQRCodeOpen && <QRCodePopup close={() => setIsQRCodeOpen(false)} ref={QRCodePopupRef} value={shareUrl} />}
-        <div className="flex flex-col p-10 rounded-3xl content-center bg-white">
+        <div className="flex flex-col p-10 rounded-3xl shadow-2xl content-center bg-white">
             <div className="flex flex-row mb-6">
                 <button className={`${index === 0 ? " bg-blue-500 text-white" : "bg-blue-200"} hover:bg-blue-200 px-2 py-1 rounded focus:outline-none mr-4`} onClick={() => setIndex(0)}>
                     Links
