@@ -46,8 +46,9 @@ class MyDocument extends Document {
 
           <link rel="icon" href="/favicon.ico" />
           <link rel="fluid-icon" href="/favicon.ico" />
+          <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
           <link rel="apple-touch-icon" href="/favicon.ico" />
-          <link rel="manifest" href="/manifest.json"></link>
+          <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
           <Main />

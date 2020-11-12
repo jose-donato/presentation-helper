@@ -16,6 +16,7 @@
 * **Scalable** 🌍 - [Next.js ISG](https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration) combined with [Cloud Firestore](https://firebase.google.com/docs/firestore) allows us to create new URL for the rooms on the fly
 * **Modern** 🛸 - built using fresh frameworks
 * **Installable** 📱 - the web application is installable as a PWA offering a similar to native experience in all devices
+* **Offline** 😴 - with service workers, if the user is offline we display a static page offline page
 
 #### Upcoming features
 *  
@@ -54,14 +55,17 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID="YYY"
 ### App preview
 > The application is live, you can try it [here](https://presentation-helper.vercel.app)
 
-![description](url)
+![Homepage screen](docs/images/homepage.png)
+![Room screen](docs/images/room.png)
+
 
 
 ### Scores
-> carbon
+> carbon - https://www.websitecarbon.com/website/presentation-helper-vercel-app/ 
+![Carbon results](docs/images/carbon.png)
 
-> lighthouse
-
+> lighthouse - 
+![Carbon results](docs/images/carbon.png)
 
 
 ### Funding

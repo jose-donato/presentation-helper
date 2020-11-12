@@ -1,9 +1,78 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="bg-black">offline</div>
-    </body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>presentation-helper</title>
+
+    <link rel="stylesheet" href="offline.css">
+    <meta name="theme-color" content="3d7cf9" data-meta="theme-color" />
+
+    <meta name="msapplication-navbutton-color" content="3d7cf9" data-meta="theme-color" />
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="3d7cf9" data-meta="theme-color" />
+
+    <meta name="audience" lang="en" content="all" />
+    <meta name="expires" content="3 days" />
+    <meta name="robots" content="follow" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="page-topic" content="Productivity Tool" />
+    <meta name="copyright" content="José Donato" />
+    <meta name="author" content="José Donato" />
+    <meta name="description" content="Tool to help you and your attendees ace in presentations or workshops"/>
+    <meta name="keywords" content="collab, presentation, talk, rooms, workshops" />
+
+    <meta property="og:image" content="favicon.ico" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://presentation-helper.vercel.app" />
+    <meta property="og:site_name" content="presentation-helper" />
+    <meta property="og:title" content="presentation-helper" />
+    <meta property="og:description" content="Tool to help you and your attendees ace in presentations or workshops" />
+
+    <meta property="twitter:url" content="https://presentation-helper.vercel.app" />
+    <meta property="twitter:title" content="presentation-helper" />
+    <meta property="twitter:description" content="Tool to help you and your attendees ace in presentations or workshops" />
+    <meta property="twitter:image" content="favicon.ico" />
+
+
+    <link rel="icon" href="favicon.ico" />
+    <link rel="fluid-icon" href="favicon.ico" />
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <link rel="apple-touch-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
+    <div class="flex flex-col mx-auto max-w-xl py-5 content-center container px-6">
+        <header class="flex mb-6 justify-center">
+            <img class="h-10 mr-6" src="presentation.svg" alt="presentation-helper logo" />
+            <h1 class="text-2xl mt-1 sm:text-3xl text-blue-800 font-bold">
+                <a href="/">presentation-helper.vercel.app</a>
+            </h1>
+        </header>
+        <main class="pb-5 text-gray-900 text-sm font-normal">
+            <p class="mb-8 w-2/3 text-center mx-auto">Helper for your presentations. Create a room, share the url with
+                the attendees and colab!</p>
+            <div class="flex flex-col p-10 rounded-3xl content-center bg-white text-center">
+                <img src="offline.svg" class="h-10 mb-2" alt="offline icon" />
+                <p>You are currently offline, to use this tool (at least for now) you need to have a network connection!</p>
+            </div>
+        </main>
+        <footer class="">
+            <div class="text-right p-10 pr-0 text-xs font-hairline text-gray-700">
+                <p class="mb-1">Icons made by <a href="https://www.flaticon.com/authors/freepik"
+                        title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">
+                        www.flaticon.com</a></p>
+                <p class="mb-1">Developed by <a href="https://jose-donato.me" title="jose-donato.me">jose-donato.me</a>
+                </p>
+                <p class="mb-1">Made with <a href="https://firebase.google.com/" title="Firebase">Firebase</a>, <a
+                        href="https://nextjs.org/" title="Next.js">Next.js</a> and <a href="https://tailwindcss.com/"
+                        title="tailwindcss">tailwindcss</a></p>
+                <p>Deployed in <a href="http://vercel.com/" title="Vercel">Vercel</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+
 </html>
