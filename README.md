@@ -1,10 +1,10 @@
 <h3 align="center">
-  <h3 align="center"><a href="https://talk-helper.vercel.app">talk-helper.vercel.app</a></h3>
+  <h3 align="center"><a href="https://presentation-helper.vercel.app">presentation-helper.vercel.app</a></h3>
   <img src="https://www.flaticon.com/svg/static/icons/svg/3534/3534083.svg" alt="Logo" height="100">
 </h3>
 
 <h3 align="center">
-  Small tool to help you and your attendees ace in presentations. Create and share it in seconds. 
+  Small tool to help you and your attendees ace in presentations. Create a room and share it in seconds. From that point on you can send snippets and links to the attendes in the room immediately.
 </h3>
 
 <br />
