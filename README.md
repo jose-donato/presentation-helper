@@ -77,12 +77,6 @@
 <br>
 <br>
 
-### Funding
-I'm starting my career and at the same time finishing my masters' in Cyber Security. If I helped you in any way please consider to support me in [GitHub](https://github.com/sponsors/jose-donato) or by [buying me a coffee](https://www.buymeacoffee.com/josedonato).
-
-<br>
-<br>
-
 
 ### Contributing
 Contributions are welcomed. Feel free to PR or open an issue with ideas/bugs found. Check in the following section how to run the application locally.
